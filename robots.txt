@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /scripts/
+Disallow: /assets/img/source/
+
+# PENDENTE: trocar pelo domínio definitivo
+Sitemap: https://lisanogueira.github.io/VicEnglish/sitemap.xml

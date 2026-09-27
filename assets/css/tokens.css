@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Design tokens — Let's Talk with Vic
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Archivo';
+  src: url('../fonts/archivo-var.woff2') format('woff2');
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Instrument Sans';
+  src: url('../fonts/instrument-sans-var.woff2') format('woff2');
+  font-weight: 400 700;
+  font-stretch: 75% 100%;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url('../fonts/instrument-serif-italic.woff2') format('woff2');
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  /* Cor — derivada da identidade "let's talk / with Vic" */
+  --magenta: #e0007a;        /* AA com texto branco e sobre --paper */
+  --magenta-deep: #b8005f;
+  --pink: #f72585;
+  --coral: #ff7a7a;
+  --peach: #f5c6a5;
+  --peach-soft: #fbe6da;
+  --paper: #fff9f7;
+  --paper-2: #fdf0ea;
+  --ink: #151515;
+  --ink-2: #4a4245;          /* texto secundário: 8.9:1 sobre --paper */
+  --ink-3: #6b5f62;          /* legendas: 5.7:1 sobre --paper, 5.1:1 sobre --peach-soft */
+  --on-ink: #f6eee9;
+  --on-ink-2: #b9aeaa;
+  --line: rgb(21 21 21 / 0.14);
+  --line-on-ink: rgb(246 238 233 / 0.16);
+
+  --grad-brand: linear-gradient(120deg, var(--magenta) 0%, var(--pink) 30%, var(--coral) 62%, var(--peach) 100%);
+
+  /* Tipografia */
+  --font-display: 'Archivo', 'Arial Black', system-ui, sans-serif;
+  --font-sans: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-serif: 'Instrument Serif', 'Times New Roman', serif;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  --fs-lead: clamp(1.0625rem, 0.98rem + 0.45vw, 1.3125rem);
+  --fs-h3: clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem);
+  --fs-h2: clamp(2.5rem, 1.4rem + 5vw, 6rem);
+  --fs-hero: clamp(2.6rem, 0.9rem + 7.4vw, 7.25rem);
+  --fs-giant: clamp(5rem, 1rem + 20vw, 22rem);
+
+  /* Espaço */
+  --gutter: clamp(1rem, 0.4rem + 3vw, 3rem);
+  --section-y: clamp(5rem, 3rem + 9vw, 11rem);
+  --max: 90rem;
+
+  /* Movimento */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 180ms;
+  --dur: 420ms;
+  --dur-slow: 900ms;
+
+  --radius: 4px;
+  --nav-h: 4.5rem;
+}

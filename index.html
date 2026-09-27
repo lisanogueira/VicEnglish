@@ -1,434 +1,561 @@
-<!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vic English | Washington DC</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .animate-bounce-slow { animation: bounce 3s infinite; }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(-5%); animation-timing-function: cubic-bezier(0.8, 0, 1, 1); }
-            50% { transform: translateY(0); animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>document.documentElement.classList.add('js')</script>
+
+  <title>Aulas de Conversação em Inglês | Let's Talk with Vic</title>
+  <meta name="description" content="Aulas particulares e online de conversação em inglês com a Vic Medrado. Pare de traduzir tudo na cabeça e comece a falar inglês com confiança.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Vitoria Medrado Justen">
+  <meta name="theme-color" content="#fff9f7">
+  <meta name="color-scheme" content="light">
+
+  <!-- PENDENTE: trocar pelo domínio definitivo (aparece também em og:url, og:image, JSON-LD, robots.txt e sitemap.xml) -->
+  <link rel="canonical" href="https://lisanogueira.github.io/VicEnglish/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Let's Talk with Vic">
+  <meta property="og:title" content="Aulas de Conversação em Inglês | Let's Talk with Vic">
+  <meta property="og:description" content="Aulas particulares de conversação para você parar de traduzir tudo na cabeça e começar a falar inglês com confiança.">
+  <meta property="og:url" content="https://lisanogueira.github.io/VicEnglish/">
+  <meta property="og:image" content="https://lisanogueira.github.io/VicEnglish/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Let's Talk with Vic — foto da Vic sorrindo ao lado do logo">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/instrument-sans-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="modulepreload" href="assets/js/config.js">
+  <link rel="modulepreload" href="assets/js/content.js">
+  <link rel="modulepreload" href="assets/js/motion.js">
+  <link rel="modulepreload" href="assets/js/ui.js">
+  <script type="module" src="assets/js/main.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://lisanogueira.github.io/VicEnglish/#website",
+        "url": "https://lisanogueira.github.io/VicEnglish/",
+        "name": "Let's Talk with Vic",
+        "inLanguage": "pt-BR"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://lisanogueira.github.io/VicEnglish/#vic",
+        "name": "Vitoria Medrado Justen",
+        "alternateName": "Vic Medrado",
+        "jobTitle": "Professora de inglês",
+        "image": "https://lisanogueira.github.io/VicEnglish/assets/img/vic-portrait.jpg",
+        "sameAs": ["https://www.instagram.com/vicmedradoo/"]
+      },
+      {
+        "@type": "Service",
+        "name": "Aulas particulares de conversação em inglês",
+        "serviceType": "Aulas de inglês online",
+        "provider": { "@id": "https://lisanogueira.github.io/VicEnglish/#vic" },
+        "availableLanguage": ["en", "pt-BR"],
+        "url": "https://lisanogueira.github.io/VicEnglish/"
+      }
+    ]
+  }
+  </script>
 </head>
-<body class="bg-[#FFFDFD] text-gray-900 selection:bg-red-100 selection:text-red-700">
 
-    <!-- --- NAVBAR --- -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-5">
-        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-            <div class="flex items-center gap-2 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                <div class="w-10 h-10 bg-red-600 rounded-xl flex items-center justify-center text-white font-black italic">V</div>
-                <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-red-600 to-pink-500 bg-clip-text text-transparent">VIC.ENGLISH</span>
-            </div>
-            
-            <div class="hidden md:flex items-center space-x-10 font-semibold text-sm uppercase tracking-widest">
-                <a href="#about" class="hover:text-red-600 transition">Sobre</a>
-                <a href="#method" class="hover:text-red-600 transition">Método</a>
-                <a href="#pricing" class="hover:text-red-600 transition">Preços</a>
-                <a href="#contact" class="bg-red-600 text-white px-7 py-3 rounded-full hover:bg-red-700 hover:shadow-lg hover:shadow-red-200 transition-all">Começar Agora</a>
-            </div>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <div class="progress" aria-hidden="true"><span></span></div>
 
-            <button class="md:hidden p-2 text-red-600" id="menu-btn">
-                <i data-lucide="menu" size="28"></i>
-            </button>
-        </div>
+  <!-- 01 — NAVBAR ======================================================= -->
+  <header class="nav" data-nav>
+    <div class="container nav__inner">
+      <a class="logo" href="#top" aria-label="Let's Talk with Vic — voltar ao início">
+        <span class="logo__talk" aria-hidden="true">LET'S TALK</span>
+        <span class="logo__vic" aria-hidden="true">with Vic</span>
+      </a>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white border-b border-pink-100 p-8 flex flex-col space-y-6 shadow-xl md:hidden">
-            <a href="#about" class="mobile-link text-xl font-bold text-left">Sobre</a>
-            <a href="#method" class="mobile-link text-xl font-bold text-left">Método</a>
-            <a href="#pricing" class="mobile-link text-xl font-bold text-left">Preços</a>
-            <a href="#contact" class="mobile-link bg-red-600 text-white px-6 py-4 rounded-2xl text-center font-bold">Reserva Direta</a>
-        </div>
+      <nav class="nav__links" aria-label="Principal">
+        <ul>
+          <li><a class="u-link" href="#sobre">Sobre</a></li>
+          <li><a class="u-link" href="#como-funciona">Como funciona</a></li>
+          <li><a class="u-link" href="#aulas">Aulas</a></li>
+          <li><a class="u-link" href="#depoimentos">Depoimentos</a></li>
+          <li><a class="u-link" href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn--sm nav__cta" href="#contato" data-cta data-cursor="LET'S TALK">
+        <span class="btn__label">Agendar aula</span><span class="btn__arrow" aria-hidden="true"><i>→</i><i>↗</i></span>
+      </a>
+
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" hidden>
+    <nav aria-label="Menu mobile">
+      <ol class="menu__list">
+        <li><a href="#sobre"><small>01</small>Sobre</a></li>
+        <li><a href="#como-funciona"><small>02</small>Como funciona</a></li>
+        <li><a href="#aulas"><small>03</small>Aulas</a></li>
+        <li><a href="#depoimentos"><small>04</small>Depoimentos</a></li>
+        <li><a href="#faq"><small>05</small>FAQ</a></li>
+      </ol>
     </nav>
+    <div class="menu__foot">
+      <a class="btn btn--block" href="#contato" data-cta>
+        <span class="btn__label">Agendar aula</span><span class="btn__arrow" aria-hidden="true"><i>→</i><i>↗</i></span>
+      </a>
+      <p class="menu__hello" lang="en">no judgment zone ✦</p>
+    </div>
+  </div>
 
-    <!-- --- HERO SECTION --- -->
-    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-6 overflow-hidden">
-        <div class="absolute top-0 right-0 w-1/3 h-full bg-red-50/50 rounded-l-[100px] -z-10 hidden lg:block"></div>
-        <div class="absolute top-40 left-10 w-24 h-24 bg-pink-100 rounded-full blur-3xl -z-10"></div>
+  <main id="main">
 
-        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
-            <div class="flex-1 text-center lg:text-left space-y-8">
-                <div class="inline-flex items-center gap-2 px-4 py-2 bg-red-50 text-red-600 rounded-full text-xs font-bold tracking-widest uppercase border border-red-100">
-                    <i data-lucide="sparkles" size="14"></i> LIVE FROM WASHINGTON, DC
-                </div>
-                <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-gray-900 leading-[1.1] tracking-tighter">
-                    Speak English <br />
-                    <span class="text-red-600 italic">without fear.</span>
-                </h1>
-                <p class="text-lg md:text-xl text-gray-600 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
-                    Transforme sua fluência com sessões dinâmicas guiadas por quem estuda Comunicação no coração dos Estados Unidos.
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-5 pt-4">
-                    <a href="#pricing" class="bg-red-600 text-white px-10 py-5 rounded-2xl text-lg font-bold hover:bg-red-700 shadow-xl shadow-red-200 transition-all flex items-center justify-center gap-2 group">
-                        Destravar meu inglês <i data-lucide="chevron-right" class="group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                    <button class="bg-white border-2 border-red-600 text-red-600 px-10 py-5 rounded-2xl text-lg font-bold hover:bg-red-50 transition-all">
-                        Conhecer a Vic
-                    </button>
-                </div>
-                
-                <!-- Stats Row -->
-                <div class="flex flex-wrap justify-center lg:justify-start gap-8 pt-10 border-t border-gray-100">
-                    <div class="flex items-center gap-3">
-                        <div class="text-red-600"><i data-lucide="users" size="20"></i></div>
-                        <div>
-                            <div class="text-2xl font-bold">50+</div>
-                            <div class="text-xs text-gray-400 uppercase font-bold tracking-widest">Alunos Felizes</div>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <div class="text-red-600"><i data-lucide="calendar" size="20"></i></div>
-                        <div>
-                            <div class="text-2xl font-bold">500+</div>
-                            <div class="text-xs text-gray-400 uppercase font-bold tracking-widest">Horas de Aula</div>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <div class="text-red-600"><i data-lucide="star" size="20"></i></div>
-                        <div>
-                            <div class="text-2xl font-bold">100%</div>
-                            <div class="text-xs text-gray-400 uppercase font-bold tracking-widest">Satisfação</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- 02 — HERO ========================================================= -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="hero__kicker" lang="en" aria-hidden="true">
+            <span class="kick kick--lets">LET'S</span>
+            <span class="kick kick--talk">TALK</span>
+            <span class="kick kick--arrow">↓</span>
+          </p>
 
-            <div class="flex-1 relative w-full max-w-md lg:max-w-xl">
-                <div class="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl aspect-[4/5] border-[12px] border-white">
-                   <img src="image.png" alt="Vitoria Medrado" class="w-full h-full object-cover" />
-                </div>
-                <!-- Floating labels -->
-                <div class="absolute -right-8 top-1/4 z-20 bg-white p-4 rounded-2xl shadow-xl border border-pink-100 animate-bounce-slow hidden md:block">
-                    <div class="flex items-center gap-3">
-                        <div class="p-2 bg-green-100 rounded-lg text-green-600"><i data-lucide="award" size="20"></i></div>
-                        <div>
-                            <p class="text-xs font-bold text-gray-400">STATUS</p>
-                            <p class="font-bold">Certified Communicator</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="absolute -left-12 bottom-1/4 z-20 bg-white p-4 rounded-2xl shadow-xl border border-pink-100 animate-pulse hidden md:block">
-                    <div class="flex items-center gap-3">
-                        <div class="p-2 bg-red-100 rounded-lg text-red-600"><i data-lucide="globe" size="20"></i></div>
-                        <div>
-                            <p class="text-xs font-bold text-gray-400">LOCATION</p>
-                            <p class="font-bold">Washington College, MD</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          <h1 class="hero__title" id="hero-title" lang="en">
+            <span class="line"><span>English is better</span></span>
+            <span class="line"><span>when you actually</span></span>
+            <span class="line"><span class="hero__accent">
+              <span class="rotator" aria-hidden="true" data-rotator>
+                <span class="is-active">speak it.</span><span>say it.</span><span>own it.</span><span>live it.</span>
+              </span>
+              <span class="sr-only">speak it.</span>
+            </span></span>
+          </h1>
+
+          <p class="hero__lead">Aulas particulares de conversação para você parar de traduzir tudo na cabeça e começar a falar inglês com confiança.</p>
+
+          <div class="hero__actions">
+            <a class="btn btn--lg" href="#contato" data-cta data-magnetic data-cursor="LET'S TALK">
+              <span class="btn__label">Quero destravar meu inglês</span><span class="btn__arrow" aria-hidden="true"><i>→</i><i>↗</i></span>
+            </a>
+            <a class="link-arrow" href="#sobre" data-cursor="GO →">Conhecer a Vic <span aria-hidden="true">↘</span></a>
+          </div>
+
+          <p class="hero__note">
+            <span>100% online</span><span aria-hidden="true">•</span><span>aulas individuais</span><span aria-hidden="true">•</span><span>conversação real</span>
+          </p>
         </div>
+
+        <div class="hero__stage" data-tilt>
+          <div class="hero__word" aria-hidden="true"><span data-parallax="-0.08">TALK</span></div>
+          <div class="hero__block" aria-hidden="true" data-parallax="0.05"></div>
+
+          <figure class="hero__photo" data-cursor="HI!">
+            <div class="hero__photo-inner">
+              <picture>
+                <source type="image/avif" srcset="assets/img/vic-hero-480.avif 480w, assets/img/vic-hero-760.avif 760w, assets/img/vic-hero-1066.avif 1066w" sizes="(min-width: 1024px) 34vw, 88vw">
+                <source type="image/webp" srcset="assets/img/vic-hero-480.webp 480w, assets/img/vic-hero-760.webp 760w, assets/img/vic-hero-1066.webp 1066w" sizes="(min-width: 1024px) 34vw, 88vw">
+                <img src="assets/img/vic-hero.jpg" width="1066" height="1333" fetchpriority="high" decoding="async"
+                     alt="Vic sorrindo, de beca e capelo, segurando o canudo do diploma">
+              </picture>
+            </div>
+          </figure>
+
+          <ul class="hero__verbs" aria-hidden="true" lang="en" data-verbs>
+            <li>speak.</li><li>listen.</li><li>think.</li><li class="is-on">talk.</li>
+          </ul>
+
+          <p class="sticker sticker--hero" lang="en">
+            no judgment zone
+            <button class="sparkle" type="button" aria-label="Um segredo" data-egg>✦</button>
+          </p>
+
+          <div class="bubbles" aria-hidden="true" lang="en">
+            <p class="bubbles__who">Vic</p>
+            <p class="bubble">Hi 👋</p>
+            <p class="bubble">You ready?</p>
+            <p class="bubble bubble--hot">Let's talk.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- --- WHY ME SECTION --- -->
-    <section id="about" class="py-24 px-6 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20 space-y-4">
-                <h2 class="text-3xl md:text-5xl font-black">Por que aprender com a Vic?</h2>
-                <div class="h-1.5 w-24 bg-red-600 mx-auto rounded-full"></div>
-            </div>
-            
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="space-y-8">
-                    <div class="flex gap-6 group">
-                        <div class="flex-shrink-0 w-16 h-16 bg-pink-50 rounded-2xl flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white transition-all duration-300">
-                            <i data-lucide="graduation-cap" size="32"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold mb-2">Comunicação é a Chave</h3>
-                            <p class="text-gray-600 leading-relaxed">Não ensino apenas regras gramaticais. Como estudante de Comunicação, foco em <strong>como</strong> você se expressa, seu tom e sua clareza ao falar.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-6 group">
-                        <div class="flex-shrink-0 w-16 h-16 bg-pink-50 rounded-2xl flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white transition-all duration-300">
-                            <i data-lucide="book-open" size="32"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold mb-2">Inglês do Mundo Real</h3>
-                            <p class="text-gray-600 leading-relaxed">Esqueça os livros datados. Você vai aprender o inglês que eu uso todos os dias no campus, em cafés e em reuniões acadêmicas em Washington.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-6 group">
-                        <div class="flex-shrink-0 w-16 h-16 bg-pink-50 rounded-2xl flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white transition-all duration-300">
-                            <i data-lucide="target" size="32"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold mb-2">Foco Total em Você</h3>
-                            <p class="text-gray-600 leading-relaxed">Cada sessão é moldada para seus interesses. Quer falar sobre tecnologia, política, viagens ou cinema? O tema é seu!</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-red-50 p-10 rounded-[3rem] border border-red-100">
-                    <p class="text-red-700 italic text-2xl font-medium leading-relaxed mb-8">
-                        "Minha missão é transformar o inglês de uma barreira em uma ponte para você conquistar suas ambições internacionais."
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-red-600 rounded-full"></div>
-                        <div>
-                            <p class="font-bold text-gray-900 uppercase tracking-tighter">Vitoria Medrado Justen</p>
-                            <p class="text-sm text-gray-500">Communication Major @ Wash College</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- 03 — MARQUEE ====================================================== -->
+    <div class="marquee" data-marquee>
+      <p class="sr-only" lang="en">Speak more. Translate less. Think in English. Talk with confidence.</p>
+      <div class="marquee__track" aria-hidden="true" lang="en">
+        <span class="marquee__set">
+          <span>Speak more</span><b>✦</b><span>Translate less</span><b>✦</b><span>Think in English</span><b>✦</b><span>Talk with confidence</span><b>✦</b>
+        </span>
+      </div>
+    </div>
+
+    <!-- 04 — O PROBLEMA (scroll storytelling) ============================= -->
+    <section class="story" id="problema" aria-labelledby="story-title">
+      <h2 class="sr-only" id="story-title">O problema: você entende inglês, até alguém falar com você.</h2>
+
+      <div class="story__track" data-story>
+        <div class="story__stage">
+          <p class="kicker kicker--on-ink">01 — o problema</p>
+
+          <ol class="story__steps">
+            <li class="story__step" lang="en">
+              <p class="story__big">You know English.</p>
+              <p class="story__small" lang="pt-BR">Entende série. Lê artigo. Sabe um monte de vocabulário.</p>
+            </li>
+            <li class="story__step" lang="en">
+              <p class="story__big">But then<span class="story__ellipsis">...</span></p>
+            </li>
+            <li class="story__step" lang="en">
+              <p class="story__big">someone <em>talks</em> to you.</p>
+              <p class="story__quote">“So, what do you do?”</p>
+            </li>
+            <li class="story__step" lang="en">
+              <p class="story__big">Your brain:</p>
+              <p class="story__dots" aria-label="silêncio"><span>.</span><span>.</span><span>.</span></p>
+            </li>
+            <li class="story__step" lang="en">
+              <p class="story__big story__big--mono">Loading English<span class="story__ellipsis">...</span></p>
+              <p class="story__loading" aria-hidden="true"><span class="story__bar"><i></i></span><span>27%</span></p>
+            </li>
+            <li class="story__step">
+              <p class="story__punch">Você entende inglês.<br><em>Até alguém falar com você.</em></p>
+              <p class="story__small">É exatamente essa trava que as aulas da Vic resolvem.</p>
+            </li>
+          </ol>
+
+          <div class="story__meter" aria-hidden="true"><i></i></div>
         </div>
+      </div>
+
+      <div class="container confidence" data-reveal>
+        <div class="meter" lang="en" style="--v: 1">
+          <p class="meter__label">I understand English.</p>
+          <div class="meter__row"><span class="meter__bar"></span><span class="meter__pct">100%</span></div>
+        </div>
+        <div class="meter" lang="en" style="--v: .3">
+          <p class="meter__label">I speak English confidently.</p>
+          <div class="meter__row"><span class="meter__bar"></span><span class="meter__pct">30%</span></div>
+        </div>
+        <p class="confidence__punch" lang="en">That's what we're <span class="circled">working on.</span></p>
+        <p class="confidence__note">Números ilustrativos. Mas se você se reconheceu aqui, já sabe por onde a gente começa.</p>
+      </div>
     </section>
 
-    <!-- --- METHODOLOGY --- -->
-    <section id="method" class="py-24 px-6 bg-[#0F0F0F] text-white overflow-hidden relative">
-        <div class="absolute top-0 right-0 w-64 h-64 bg-red-900/20 blur-[120px]"></div>
-        <div class="max-w-7xl mx-auto relative z-10">
-            <div class="text-center mb-20 space-y-4">
-                <h2 class="text-3xl md:text-5xl font-black">Minha Metodologia</h2>
-                <p class="text-gray-400 max-w-lg mx-auto uppercase tracking-widest font-bold text-sm">O caminho para sua fluência</p>
-            </div>
+    <!-- 05 — SOBRE A VIC ================================================== -->
+    <section class="vic section" id="sobre" aria-labelledby="vic-title">
+      <div class="container vic__grid">
+        <figure class="vic__photo" data-cursor="HI!">
+          <div class="vic__frame" data-parallax="-0.04">
+            <!-- Espaço pronto para uma 2ª foto (mais casual). Hoje usa um recorte da mesma foto do hero. -->
+            <picture>
+              <source type="image/avif" srcset="assets/img/vic-portrait-440.avif 440w, assets/img/vic-portrait-660.avif 660w" sizes="(min-width: 1024px) 36vw, 90vw">
+              <source type="image/webp" srcset="assets/img/vic-portrait-440.webp 440w, assets/img/vic-portrait-660.webp 660w" sizes="(min-width: 1024px) 36vw, 90vw">
+              <img src="assets/img/vic-portrait.jpg" width="660" height="880" loading="lazy" decoding="async"
+                   alt="Retrato da Vic sorrindo, com cabelo ruivo e brincos dourados">
+            </picture>
+          </div>
+          <figcaption class="vic__caption"><span lang="en">this is Vic</span> <span aria-hidden="true">↗</span></figcaption>
+          <p class="sticker sticker--vic" lang="en">real English</p>
+        </figure>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="relative p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-red-500/50 transition-all group">
-                    <div class="text-5xl font-black text-white/10 mb-6 group-hover:text-red-600 transition-colors">01</div>
-                    <h4 class="text-xl font-bold mb-4">Diagnóstico</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">Avaliamos seu nível atual e seus objetivos específicos (carreira, viagem ou acadêmico).</p>
-                </div>
-                <div class="relative p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-red-500/50 transition-all group">
-                    <div class="text-5xl font-black text-white/10 mb-6 group-hover:text-red-600 transition-colors">02</div>
-                    <h4 class="text-xl font-bold mb-4">Personalização</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">Criamos tópicos de conversação baseados nos seus interesses reais.</p>
-                </div>
-                <div class="relative p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-red-500/50 transition-all group">
-                    <div class="text-5xl font-black text-white/10 mb-6 group-hover:text-red-600 transition-colors">03</div>
-                    <h4 class="text-xl font-bold mb-4">Imersão Ativa</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">Prática intensiva com correções em tempo real e foco em 'natural sounding'.</p>
-                </div>
-                <div class="relative p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-red-500/50 transition-all group">
-                    <div class="text-5xl font-black text-white/10 mb-6 group-hover:text-red-600 transition-colors">04</div>
-                    <h4 class="text-xl font-bold mb-4">Feedback</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">Relatórios de progresso e materiais de apoio após cada sessão.</p>
-                </div>
-            </div>
+        <div class="vic__copy">
+          <p class="kicker">02 — quem dá a aula</p>
+          <h2 class="h2" id="vic-title" lang="en" data-reveal="lines">
+            <span class="line"><span>Meet <em>Vic.</em></span></span>
+          </h2>
+
+          <!-- Texto baseado nas informações do site anterior. Revisar com a Vic. -->
+          <div class="vic__text" data-reveal>
+            <p class="vic__lead">Oi! Eu sou a Vic. Estudo Comunicação na Washington College, nos Estados Unidos — então inglês, pra mim, não é matéria. É o idioma do campus, do café, das aulas e das conversas de todo dia.</p>
+            <p>Nas minhas aulas eu não fico presa em regra de gramática. Como estudante de Comunicação, presto atenção em <strong>como</strong> você se expressa: seu tom, sua clareza, o jeito que você monta uma ideia em voz alta.</p>
+            <p>E o assunto quem escolhe é você. Tecnologia, viagem, política, aquele filme que você viu ontem. A gente conversa sobre o que te interessa, porque é assim que o inglês fica.</p>
+          </div>
+
+          <dl class="facts" data-reveal>
+            <div><dt>Nome</dt><dd>Vitoria Medrado Justen</dd></div>
+            <div><dt>Estuda</dt><dd>Comunicação · Washington College (EUA)</dd></div>
+            <div><dt>Aulas</dt><dd>Individuais · 100% online</dd></div>
+            <div><dt>Assunto</dt><dd lang="en">whatever you want</dd></div>
+          </dl>
+
+          <p class="signature" aria-hidden="true">— Vic</p>
         </div>
+      </div>
     </section>
 
-    <!-- --- PRICING --- -->
-    <section id="pricing" class="py-24 px-6 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16 space-y-4">
-                <h2 class="text-3xl md:text-5xl font-black italic">Escolha sua jornada</h2>
-                <p class="text-gray-500 font-medium">Invista no seu maior ativo: sua comunicação.</p>
-            </div>
+    <!-- 06 — COMO FUNCIONA ================================================ -->
+    <section class="method section" id="como-funciona" aria-labelledby="method-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="kicker">03 — como funciona</p>
+          <h2 class="h2" id="method-title" lang="en" data-reveal="lines">
+            <span class="line"><span>Less textbook.</span></span>
+            <span class="line"><span><em>More talking.</em></span></span>
+          </h2>
+        </header>
 
-            <div class="grid lg:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="relative p-10 rounded-[2.5rem] border-2 border-pink-50 hover:border-pink-200 transition-all duration-500">
-                    <h3 class="text-2xl font-black mb-2">Sessão Avulsa</h3>
-                    <p class="text-gray-500 text-sm mb-6 font-medium">Ideal para urgências ou testes.</p>
-                    <div class="flex items-baseline gap-1 mb-8">
-                        <span class="text-sm font-bold text-gray-400">R$</span>
-                        <span class="text-5xl font-black text-red-600">135</span>
-                        <span class="text-gray-400 font-bold">/hora</span>
-                    </div>
-                    <ul class="space-y-4 mb-10">
-                        <li class="flex items-center gap-3 text-gray-700 text-sm font-medium">
-                            <i data-lucide="check-circle" size="18" class="text-red-600"></i> 60 min de conversação
-                        </li>
-                        <li class="flex items-center gap-3 text-gray-700 text-sm font-medium">
-                            <i data-lucide="check-circle" size="18" class="text-red-600"></i> Feedback de pronúncia
-                        </li>
-                        <li class="flex items-center gap-3 text-gray-700 text-sm font-medium">
-                            <i data-lucide="check-circle" size="18" class="text-red-600"></i> Material pós-aula
-                        </li>
-                    </ul>
-                    <button class="w-full py-5 rounded-2xl font-bold transition-all shadow-lg bg-pink-50 text-red-600 hover:bg-red-600 hover:text-white shadow-pink-50">
-                        Agendar agora
-                    </button>
-                </div>
-                <!-- Card 2 (Recommended) -->
-                <div class="relative p-10 rounded-[2.5rem] border-2 border-red-600 shadow-2xl scale-105 z-10 bg-white transition-all duration-500">
-                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-red-600 text-white px-6 py-1.5 rounded-full text-xs font-black uppercase tracking-tighter">
-                        Recomendado
-                    </div>
-                    <h3 class="text-2xl font-black mb-2">Plano Fluência (4h)</h3>
-                    <p class="text-gray-500 text-sm mb-6 font-medium">O equilíbrio perfeito para evolução constante.</p>
-                    <div class="flex items-baseline gap-1 mb-8">
-                        <span class="text-sm font-bold text-gray-400">R$</span>
-                        <span class="text-5xl font-black text-red-600">420</span>
-                        <span class="text-gray-400 font-bold">/mês*</span>
-                    </div>
-                    <ul class="space-y-4 mb-10">
-                        <li class="flex items-center gap-3 text-gray-700 text-sm font-medium">
-                            <i data-lucide="check-circle" size="18" class="text-red-600"></i> 1h por semana
-                        </li>
-                        <li class="flex items-center gap-3 text-gray-700 text-sm font-medium">
-                            <i data-lucide="check-circle" size="18" class="text-red-600"></i> Suporte VIP via WhatsApp
-                        </li>
-                        <li class="flex items-center gap-3 text-gray-700 text-sm font-medium">
-                            <i data-lucide="check-circle" size="18" class="text-red-600"></i> Plano de estudos exclusivo
-                        </li>
-                    </ul>
-                    <button class="w-full py-5 rounded-2xl font-bold transition-all shadow-lg bg-red-600 text-white hover:bg-red-700 shadow-red-100">
-                        Quero este plano
-                    </button>
-                </div>
-                <!-- Card 3 -->
-                <div class="relative p-10 rounded-[2.5rem] border-2 border-pink-50 hover:border-pink-200 transition-all duration-500">
-                    <h3 class="text-2xl font-black mb-2">Plano Elite (8h)</h3>
-                    <p class="text-gray-500 text-sm mb-6 font-medium">Para quem tem pressa em dominar o idioma.</p>
-                    <div class="flex items-baseline gap-1 mb-8">
-                        <span class="text-sm font-bold text-gray-400">R$</span>
-                        <span class="text-5xl font-black text-red-600">760</span>
-                        <span class="text-gray-400 font-bold">/mês*</span>
-                    </div>
-                    <ul class="space-y-4 mb-10">
-                        <li class="flex items-center gap-3 text-gray-700 text-sm font-medium">
-                            <i data-lucide="check-circle" size="18" class="text-red-600"></i> 2h por semana
-                        </li>
-                        <li class="flex items-center gap-3 text-gray-700 text-sm font-medium">
-                            <i data-lucide="check-circle" size="18" class="text-red-600"></i> Simulação de entrevistas
-                        </li>
-                        <li class="flex items-center gap-3 text-gray-700 text-sm font-medium">
-                            <i data-lucide="check-circle" size="18" class="text-red-600"></i> Consultoria cultural EUA
-                        </li>
-                    </ul>
-                    <button class="w-full py-5 rounded-2xl font-bold transition-all shadow-lg bg-pink-50 text-red-600 hover:bg-red-600 hover:text-white shadow-pink-50">
-                        Escolher Elite
-                    </button>
-                </div>
-            </div>
-            <p class="text-center text-gray-400 mt-12 text-sm">*Planos com duração de 30 dias a partir da primeira aula.</p>
-        </div>
+        <ol class="steps">
+          <li class="step" data-reveal style="--i: 0">
+            <span class="step__num" aria-hidden="true">01</span>
+            <h3 class="step__title" lang="en">We talk.</h3>
+            <p>Conversas sobre o que faz parte da sua vida: trabalho, viagem, a série que você está vendo. Nada de diálogo de livro didático.</p>
+          </li>
+          <li class="step" data-reveal style="--i: 1">
+            <span class="step__num" aria-hidden="true">02</span>
+            <h3 class="step__title" lang="en">I correct.</h3>
+            <p>Pronúncia, vocabulário e estrutura corrigidos na hora certa, sem cortar você no meio de toda frase. O objetivo é soar natural.</p>
+          </li>
+          <li class="step" data-reveal style="--i: 2">
+            <span class="step__num" aria-hidden="true">03</span>
+            <h3 class="step__title" lang="en">You improve.</h3>
+            <p>Depois da aula, você recebe material com o que apareceu na conversa. Cada aula vira repertório pra próxima.</p>
+          </li>
+        </ol>
+
+        <figure class="script" data-script>
+          <figcaption class="script__caption">
+            <span class="kicker">um trecho de aula, mais ou menos assim</span>
+            <span class="script__rec" aria-hidden="true"><i></i> rec 00:14</span>
+          </figcaption>
+          <ol class="script__lines" lang="en">
+            <li class="script__line script__line--vic"><span class="script__who">Vic</span><p>So, tell me about your weekend.</p></li>
+            <li class="script__line"><span class="script__who">You</span><p>Well… I…</p></li>
+            <li class="script__line script__line--vic"><span class="script__who">Vic</span><p>Take your time :)</p></li>
+            <li class="script__line"><span class="script__who">You</span><p>I went to…</p></li>
+            <li class="script__line script__line--vic"><span class="script__who">Vic</span><p>Exactly. Keep going.</p></li>
+          </ol>
+        </figure>
+      </div>
     </section>
 
-    <!-- --- FAQ SECTION --- -->
-    <section class="py-24 px-6 bg-pink-50/30">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-black text-center mb-16">Perguntas Frequentes</h2>
-            <div class="space-y-4" id="faq-container">
-                <!-- FAQ Item 1 -->
-                <div class="faq-item bg-white border border-pink-100 rounded-2xl overflow-hidden shadow-sm">
-                    <button class="w-full p-6 text-left flex justify-between items-center hover:bg-red-50/50 transition-colors">
-                        <span class="font-bold text-gray-800">Para qual nível de inglês são as aulas?</span>
-                        <i data-lucide="chevron-down" class="transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer hidden px-6 pb-6 text-gray-600 leading-relaxed">
-                        As aulas são focadas em conversação, por isso recomendo que o aluno tenha ao menos um nível básico/intermediário para aproveitar ao máximo. Mas não se preocupe, eu te ajudo a destravar!
-                    </div>
-                </div>
-                <!-- FAQ Item 2 -->
-                <div class="faq-item bg-white border border-pink-100 rounded-2xl overflow-hidden shadow-sm">
-                    <button class="w-full p-6 text-left flex justify-between items-center hover:bg-red-50/50 transition-colors">
-                        <span class="font-bold text-gray-800">Como funcionam os pagamentos?</span>
-                        <i data-lucide="chevron-down" class="transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer hidden px-6 pb-6 text-gray-600 leading-relaxed">
-                        Os pagamentos são feitos via PIX ou transferência antes do início das sessões ou pacotes. Para planos mensais, o pagamento é recorrente no início do ciclo.
-                    </div>
-                </div>
-                <!-- FAQ Item 3 -->
-                <div class="faq-item bg-white border border-pink-100 rounded-2xl overflow-hidden shadow-sm">
-                    <button class="w-full p-6 text-left flex justify-between items-center hover:bg-red-50/50 transition-colors">
-                        <span class="font-bold text-gray-800">E se eu precisar desmarcar?</span>
-                        <i data-lucide="chevron-down" class="transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer hidden px-6 pb-6 text-gray-600 leading-relaxed">
-                        Aviso prévio de 24h permite o reagendamento sem custos. Caso contrário, a hora será contabilizada.
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- 07 — ASSUNTOS ===================================================== -->
+    <section class="topics section" aria-labelledby="topics-title" data-cloud>
+      <div class="container">
+        <p class="kicker">04 — sobre o que a gente fala</p>
+        <h2 class="h2" id="topics-title" lang="en" data-reveal="lines">
+          <span class="line"><span>What do we</span></span>
+          <span class="line"><span>talk about?</span></span>
+        </h2>
+
+        <ul class="cloud" lang="en">
+          <li style="--d: .9; --r: -3deg" data-icon="✈">Travel</li>
+          <li style="--d: .4; --r: 2deg" data-icon="↗">Career</li>
+          <li style="--d: 1.2; --r: -1deg" data-icon="♡">Dating</li>
+          <li style="--d: .6; --r: 3deg" data-icon="▶">Movies</li>
+          <li style="--d: 1; --r: -2deg" data-icon="♪">Music</li>
+          <li style="--d: .5; --r: 1deg" data-icon="✎">College</li>
+          <li style="--d: .8; --r: -3deg" data-icon="//">Tech</li>
+          <li style="--d: .7; --r: 2deg" data-icon="☕">Daily life</li>
+          <li class="cloud__any" style="--d: 1.3; --r: -2deg" data-icon="✦">whatever you want.</li>
+        </ul>
+
+        <p class="topics__note" lang="en">because real conversations don't follow a textbook.</p>
+      </div>
     </section>
 
-    <!-- --- CTA / FOOTER --- -->
-    <footer id="contact" class="pt-24 pb-12 px-6">
-        <div class="max-w-7xl mx-auto text-center md:text-left">
-            <div class="bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] rounded-[4rem] p-12 lg:p-24 text-center text-white relative overflow-hidden shadow-3xl">
-                <div class="absolute bottom-0 right-0 w-96 h-96 bg-red-600/10 blur-[100px]"></div>
-                <h2 class="text-4xl md:text-6xl font-black mb-8 leading-tight">Pronto para dar o <br /><span class="text-red-600 italic">próximo passo?</span></h2>
-                <p class="text-gray-400 text-lg md:text-xl max-w-xl mx-auto mb-12 font-medium">
-                    Vagas limitadas para manter a qualidade e o acompanhamento próximo de cada aluno.
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center gap-6">
-                    <a href="https://wa.me/5524988710810" target="_blank" class="bg-red-600 text-white px-10 py-5 rounded-2xl text-xl font-bold flex items-center justify-center gap-3 hover:scale-105 transition-transform shadow-xl shadow-red-900/20">
-                        <i data-lucide="message-circle" size="24"></i> Conversar no WhatsApp
-                    </a>
-                    <div class="flex justify-center items-center gap-4">
-                        <a href="https://www.instagram.com/vicmedradoo/" class="w-14 h-14 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center hover:bg-white/10 transition-colors"><i data-lucide="instagram"></i></a>
-                        <a href="#" class="w-14 h-14 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center hover:bg-white/10 transition-colors"><i data-lucide="linkedin"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-20 pt-12 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-8 text-gray-400 font-medium">
-                <div class="flex items-center gap-2">
-                    <div class="w-6 h-6 bg-red-600 rounded-lg"></div>
-                    <span class="text-gray-900 font-bold">VIC.ENGLISH</span>
-                </div>
-                <p class="text-sm">© 2024 Vitoria Medrado Justen • Washington, DC</p>
-                <div class="flex gap-8 text-sm">
-                    <a href="#" class="hover:text-red-600">Políticas</a>
-                    <a href="#" class="hover:text-red-600">Termos</a>
-                </div>
-            </div>
+    <!-- BEFORE / AFTER ==================================================== -->
+    <section class="ba section" aria-labelledby="ba-title" data-ba>
+      <div class="container">
+        <div class="ba__pair" lang="en">
+          <p class="ba__row ba__row--before"><span class="ba__tag">Before</span><span class="ba__text">“Sorry… my English is bad.”</span></p>
+          <p class="ba__row ba__row--after"><span class="ba__tag">After</span><span class="ba__text">“Wait, let me explain.”</span></p>
         </div>
-    </footer>
+        <h2 class="ba__title" id="ba-title" lang="en" data-reveal="lines">
+          <span class="line"><span>Your English doesn't need</span></span>
+          <span class="line"><span>to be perfect. <em>It needs to be yours.</em></span></span>
+        </h2>
+        <p class="ba__formula">confiança <span aria-label="maior que">&gt;</span> perfeição</p>
+      </div>
+    </section>
 
-    <!-- Interatividade JS -->
-    <script>
-        // Inicializa ícones Lucide
-        lucide.createIcons();
+    <!-- 08 — PARA QUEM É ================================================== -->
+    <section class="fit section" id="para-quem" aria-labelledby="fit-title">
+      <div class="container fit__grid">
+        <header class="section-head fit__head">
+          <p class="kicker">05 — pra quem é</p>
+          <h2 class="h2" id="fit-title" lang="en" data-reveal="lines">
+            <span class="line"><span>This is</span></span>
+            <span class="line"><span>for you if<em>...</em></span></span>
+          </h2>
+        </header>
+        <ul class="fit__list">
+          <li data-reveal style="--i: 0">você entende inglês, mas <strong>trava</strong> na hora de responder</li>
+          <li data-reveal style="--i: 1">quer melhorar a <strong>pronúncia</strong></li>
+          <li data-reveal style="--i: 2">precisa conversar em <strong>viagens</strong></li>
+          <li data-reveal style="--i: 3">quer inglês para o <strong>trabalho</strong></li>
+          <li data-reveal style="--i: 4">quer aumentar o <strong>vocabulário</strong></li>
+          <li data-reveal style="--i: 5">simplesmente quer falar com mais <strong>confiança</strong></li>
+        </ul>
+      </div>
+    </section>
 
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                nav.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-3');
-                nav.classList.remove('bg-transparent', 'py-5');
-            } else {
-                nav.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-3');
-                nav.classList.add('bg-transparent', 'py-5');
-            }
-        });
+    <!-- 09 — DEPOIMENTOS ================================================== -->
+    <section class="voices section" id="depoimentos" aria-labelledby="voices-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="kicker">06 — depoimentos</p>
+          <h2 class="h2" id="voices-title" lang="en" data-reveal="lines">
+            <span class="line"><span>People are <em>talking.</em></span></span>
+          </h2>
+        </header>
 
-        // Mobile Menu Toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        <!-- Preenchido por TESTIMONIALS em assets/js/config.js.
+             PENDENTE: sem depoimentos reais ainda — os itens abaixo são espaços reservados. -->
+        <div class="voices__list" data-testimonials>
+          <figure class="voice voice--empty"><blockquote><p>Espaço reservado para o depoimento de um aluno.</p></blockquote><figcaption>Depoimento em breve</figcaption></figure>
+          <figure class="voice voice--empty"><blockquote><p>Espaço reservado para o depoimento de um aluno.</p></blockquote><figcaption>Depoimento em breve</figcaption></figure>
+          <figure class="voice voice--empty"><blockquote><p>Espaço reservado para o depoimento de um aluno.</p></blockquote><figcaption>Depoimento em breve</figcaption></figure>
+        </div>
+        <p class="voices__note" data-testimonials-note>Os primeiros depoimentos estão chegando. Quer ser um deles?</p>
+      </div>
+    </section>
 
-        // Close mobile menu on click link
-        document.querySelectorAll('.mobile-link').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
+    <!-- 10 — AULAS / PLANOS =============================================== -->
+    <section class="plans section" id="aulas" aria-labelledby="plans-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="kicker">07 — aulas &amp; valores</p>
+          <h2 class="h2" id="plans-title" lang="en" data-reveal="lines">
+            <span class="line"><span>Pick your <em>pace.</em></span></span>
+          </h2>
+          <p class="section-head__lead">Todas as aulas são individuais, online e duram 60 minutos. A diferença é o ritmo.</p>
+        </header>
 
-        // FAQ Accordion
-        document.querySelectorAll('.faq-item button').forEach(button => {
-            button.addEventListener('click', () => {
-                const answer = button.nextElementSibling;
-                const icon = button.querySelector('[data-lucide="chevron-down"]');
-                
-                // Toggle answer visibility
-                const isOpen = !answer.classList.contains('hidden');
-                
-                // Close all others
-                document.querySelectorAll('.faq-answer').forEach(el => el.classList.add('hidden'));
-                document.querySelectorAll('.faq-item i').forEach(el => el.classList.remove('rotate-180'));
+        <!-- Renderizado a partir de PLANS em assets/js/config.js -->
+        <div class="plans__list" data-plans></div>
+        <p class="plans__note" data-payment-note></p>
+      </div>
+    </section>
 
-                if (!isOpen) {
-                    answer.classList.remove('hidden');
-                    icon.classList.add('rotate-180');
-                }
-            });
-        });
-    </script>
+    <!-- 11 — CTA FINAL ==================================================== -->
+    <section class="finale" aria-labelledby="finale-title" data-finale>
+      <div class="finale__bg" aria-hidden="true">
+        <span data-parallax="0.06">TALK</span><span data-parallax="-0.04">TALK</span><span data-parallax="0.03">TALK</span>
+      </div>
+      <div class="container finale__inner">
+        <h2 class="finale__title" id="finale-title" lang="en">
+          <span class="line"><span>Your next</span></span>
+          <span class="line"><span>conversation</span></span>
+          <span class="line"><span>could be</span></span>
+          <span class="line finale__big"><span>in English.</span></span>
+        </h2>
+        <div class="finale__cta">
+          <a class="btn btn--paper btn--xl" href="#contato" data-cta data-magnetic data-cursor="LET'S TALK">
+            <span class="btn__label" lang="en">Let's talk</span><span class="btn__arrow" aria-hidden="true"><i>→</i><i>↗</i></span>
+          </a>
+          <p class="finale__note">Abre uma conversa no WhatsApp com a Vic.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12 — FAQ ========================================================== -->
+    <section class="faq section" id="faq" aria-labelledby="faq-title">
+      <div class="container faq__grid">
+        <header class="section-head faq__head">
+          <p class="kicker">08 — FAQ</p>
+          <h2 class="h2" id="faq-title" lang="en" data-reveal="lines">
+            <span class="line"><span>Good</span></span>
+            <span class="line"><span><em>questions.</em></span></span>
+          </h2>
+          <p class="section-head__lead">Não achou sua dúvida? <a class="u-link u-link--hot" href="#contato" data-cta>Pergunta direto pra Vic.</a></p>
+        </header>
+
+        <div class="faq__list" data-faq>
+          <div class="faq__item">
+            <h3><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-1" id="faq-1-q">Preciso já saber inglês?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__a" id="faq-1" role="region" aria-labelledby="faq-1-q"><div><p>As aulas são focadas em conversação, então o ideal é ter pelo menos um nível básico ou intermediário para aproveitar ao máximo. Se você entende, mas trava na hora de falar, é exatamente pra você.</p></div></div>
+          </div>
+          <div class="faq__item">
+            <h3><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-2" id="faq-2-q">Como funcionam as aulas?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__a" id="faq-2" role="region" aria-labelledby="faq-2-q"><div><p>A gente conversa sobre assuntos que fazem sentido pra você, e a Vic corrige pronúncia, vocabulário e estrutura ao longo da conversa. Depois de cada aula você recebe material de apoio com o que apareceu.</p></div></div>
+          </div>
+          <div class="faq__item">
+            <h3><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-3" id="faq-3-q">As aulas são individuais?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__a" id="faq-3" role="region" aria-labelledby="faq-3-q"><div><p>Sim. São aulas particulares: só você e a Vic, no seu ritmo e com os seus assuntos.</p></div></div>
+          </div>
+          <div class="faq__item">
+            <h3><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-4" id="faq-4-q">Quanto tempo dura cada aula?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__a" id="faq-4" role="region" aria-labelledby="faq-4-q"><div><p>60 minutos.</p></div></div>
+          </div>
+          <div class="faq__item">
+            <h3><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-5" id="faq-5-q">Posso cancelar ou remarcar?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__a" id="faq-5" role="region" aria-labelledby="faq-5-q"><div><p>Pode. Avisando com 24 horas de antecedência, a aula é remarcada sem custo. Sem esse aviso, a aula é contabilizada.</p></div></div>
+          </div>
+          <div class="faq__item">
+            <h3><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-6" id="faq-6-q">Como são feitas as aulas?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <!-- PENDENTE: confirmar com a Vic qual plataforma de videochamada ela usa. -->
+            <div class="faq__a" id="faq-6" role="region" aria-labelledby="faq-6-q"><div><p>100% online, por videochamada. Você só precisa de internet, um fone e vontade de falar. Os detalhes a Vic combina com você no primeiro contato.</p></div></div>
+          </div>
+          <div class="faq__item">
+            <h3><button type="button" class="faq__q" aria-expanded="false" aria-controls="faq-7" id="faq-7-q">Como funciona o pagamento?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__a" id="faq-7" role="region" aria-labelledby="faq-7-q"><div><p>Via PIX ou transferência, antes do início das aulas.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 13 — FOOTER ========================================================= -->
+  <footer class="footer" id="contato">
+    <div class="container">
+      <p class="footer__word" lang="en">
+        <span class="sr-only">Let's talk with Vic</span>
+        <span aria-hidden="true">LET'S</span>
+        <span class="talk" aria-hidden="true" data-talk><span>T</span><span>A</span><span>L</span><span>K</span></span>
+        <span class="footer__with" aria-hidden="true">with Vic</span>
+      </p>
+
+      <div class="footer__grid">
+        <div class="footer__cta">
+          <p class="footer__line">Pronto pra primeira conversa? Manda um oi e a gente combina. <button class="sparkle" type="button" aria-label="Um segredo" data-egg>✦</button></p>
+          <a class="btn btn--lg" href="#contato" data-cta data-magnetic data-cursor="LET'S TALK">
+            <span class="btn__label" lang="en">Say hi 👋</span><span class="btn__arrow" aria-hidden="true"><i>→</i><i>↗</i></span>
+          </a>
+        </div>
+
+        <ul class="footer__contact" aria-label="Contato">
+          <li><span class="footer__label">Instagram</span><a class="u-link" data-instagram href="https://www.instagram.com/vicmedradoo/" target="_blank" rel="noopener">@vicmedradoo</a></li>
+          <li><span class="footer__label">WhatsApp</span><a class="u-link" href="#contato" data-cta>Mandar mensagem</a></li>
+          <li data-email-item hidden><span class="footer__label">E-mail</span><a class="u-link" data-email href="#contato"></a></li>
+        </ul>
+
+        <nav class="footer__nav" aria-label="Rodapé">
+          <ul>
+            <li><a class="u-link" href="#sobre">Sobre</a></li>
+            <li><a class="u-link" href="#como-funciona">Como funciona</a></li>
+            <li><a class="u-link" href="#aulas">Aulas</a></li>
+            <li><a class="u-link" href="#faq">FAQ</a></li>
+            <li><a class="u-link" href="#top">Voltar ao topo ↑</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer__base">
+        <p>© <span data-year>2026</span> Vitoria Medrado Justen · Let's Talk with Vic</p>
+        <p lang="en">Made for people who are ready to talk.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a class="float-cta" href="#contato" data-cta data-float-cta aria-label="Falar com a Vic no WhatsApp">
+    <span lang="en">Let's talk</span> <span aria-hidden="true">→</span>
+  </a>
+  <div class="cursor" aria-hidden="true"><span></span></div>
+  <div class="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
